@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import logoImage from './img/logo.jpg'
 import cursoOfficeImage from './img/CURSO-BASICO-OFFICEE.png'
 import cursoCanvaImage from './img/CURSO-CANVA-AGUADILLA.png'
-import isotipoImage from './img/ISOTIPO VERS BLANCO.png'
 
 const professionalInfo = {
   name: 'Tu Guía Digital',
