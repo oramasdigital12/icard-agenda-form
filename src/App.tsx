@@ -36,8 +36,8 @@ const professionalInfo = {
       image: cursoCanvaImage,
       images: [cursoCanvaImage, banner1, banner2],
       whatsappMessage: 'Hola, me interesa el curso de Canva. ¿Me pueden brindar más información?',
-      priceOriginal: 250,
-      priceDiscount: 100
+      priceOriginal: 270,
+      priceDiscount: 125
     }
   ],
   feedbacks: [
@@ -363,37 +363,36 @@ function App() {
             </div>
           )}
         </div>
-        {/* Contact Bar: dentro del frame en desktop, fija en móvil */}
+        {/* Contact Bar: estilo dock iPhone, fija en móvil y dentro del frame en desktop */}
         <div
           className="footer-contact-bar"
           style={{
             position: window.innerWidth > 768 ? 'absolute' : 'fixed',
             bottom: 0,
-            left: 0,
-            right: 0,
-            width: '100%',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            width: 380,
+            maxWidth: '90vw',
             display: 'flex',
             justifyContent: 'space-around',
             alignItems: 'center',
-            background: 'rgba(20,20,30,0.98)',
-            padding: '0.7rem 0',
-            boxShadow: '0 -2px 10px rgba(0,0,0,0.15)',
-            zIndex: 100,
-            borderBottomLeftRadius: window.innerWidth > 768 ? '2rem' : 0,
-            borderBottomRightRadius: window.innerWidth > 768 ? '2rem' : 0,
+            background: 'rgba(12, 12, 15, 0.55)',
+            backdropFilter: 'blur(16px)',
+            padding: '0.7rem 1.2rem',
+            boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
+            zIndex: 999,
+            borderRadius: 32,
+            border: '1.5px solid rgba(255,255,255,0.10)',
           }}
         >
-          <a href={professionalInfo.location.maps} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#00B4DB', textDecoration: 'none', fontWeight: 500, fontSize: '0.85rem' }}>
-            <svg width="24" height="24" fill="#00B4DB" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-            <span>{professionalInfo.location.text}</span>
+          <a href={professionalInfo.location.maps} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(255,255,255,0.18)', borderRadius: '50%', width: 56, height: 56, boxShadow: '0 2px 8px rgba(0,0,0,0.10)', margin: '0 8px' }}>
+            <svg width="32" height="32" fill="#00B4DB" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
           </a>
-          <a href={`mailto:${professionalInfo.email}`} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#fff', textDecoration: 'none', fontWeight: 500, fontSize: '0.85rem' }}>
-            <svg width="24" height="24" fill="#fff" viewBox="0 0 24 24"><path d="M12 13.065l-8-5.065v10h16v-10l-8 5.065zm8-7.065v-.001l-8 5.066-8-5.066v-.001h16zm-16-2c-1.104 0-2 .896-2 2v16c0 1.104.896 2 2 2h16c1.104 0 2-.896 2-2v-16c0-1.104-.896-2-2-2h-16z"/></svg>
-            <span>Email</span>
+          <a href={`mailto:${professionalInfo.email}`} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(255,255,255,0.18)', borderRadius: '50%', width: 56, height: 56, boxShadow: '0 2px 8px rgba(0,0,0,0.10)', margin: '0 8px' }}>
+            <svg width="32" height="32" fill="#fff" viewBox="0 0 24 24"><path d="M12 13.065l-8-5.065v10h16v-10l-8 5.065zm8-7.065v-.001l-8 5.066-8-5.066v-.001h16zm-16-2c-1.104 0-2 .896-2 2v16c0 1.104.896 2 2 2h16c1.104 0 2-.896 2-2v-16c0-1.104-.896-2-2-2h-16z"/></svg>
           </a>
-          <a href={`tel:${professionalInfo.phone}`} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#25D366', textDecoration: 'none', fontWeight: 500, fontSize: '0.85rem' }}>
-            <svg width="24" height="24" fill="#25D366" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1.003 1.003 0 011.01-.24c1.12.37 2.33.57 3.59.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.29 21 3 13.71 3 5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.26.2 2.47.57 3.59.09.27.03.57-.24 1.01l-2.21 2.19z"/></svg>
-            <span>Llamar</span>
+          <a href={`tel:${professionalInfo.phone}`} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(255,255,255,0.18)', borderRadius: '50%', width: 56, height: 56, boxShadow: '0 2px 8px rgba(0,0,0,0.10)', margin: '0 8px' }}>
+            <svg width="32" height="32" fill="#25D366" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1.003 1.003 0 011.01-.24c1.12.37 2.33.57 3.59.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.29 21 3 13.71 3 5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.26.2 2.47.57 3.59.09.27.03.57-.24 1.01l-2.21 2.19z"/></svg>
           </a>
         </div>
       </div>
